@@ -9,7 +9,7 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface MultiselectTableViewController : UITableViewController
+@interface MultiselectTableViewController : UIViewController
 
 @end
 
