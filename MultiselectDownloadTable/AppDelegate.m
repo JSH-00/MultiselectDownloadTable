@@ -7,7 +7,6 @@
 
 #import "AppDelegate.h"
 #import "MultiselectTableViewController.h"
-#import "TableViewController.h"
 @interface AppDelegate ()
 
 @end
@@ -19,7 +18,6 @@
     // Override point for customization after application launch.
     self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
     MultiselectTableViewController *vc1 = [[MultiselectTableViewController alloc] init];
-    TableViewController * vc2 = [TableViewController new];
     UINavigationController *vc1_NA = [[UINavigationController alloc] initWithRootViewController:vc1];
     self.window.rootViewController = vc1_NA;
     return YES;

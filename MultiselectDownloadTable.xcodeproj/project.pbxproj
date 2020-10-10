@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -19,10 +19,7 @@
 		57A1E7BE252B61A700E513B0 /* MultiselectTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 57A1E7BD252B61A700E513B0 /* MultiselectTableViewController.m */; };
 		57A1E7C4252C1D2A00E513B0 /* MultiselectTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 57A1E7C3252C1D2A00E513B0 /* MultiselectTableViewCell.m */; };
 		57A1E7CA252C26E700E513B0 /* DownloadModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 57A1E7C9252C26E700E513B0 /* DownloadModel.m */; };
-		57A1E7D6252CA97800E513B0 /* MyTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 57A1E7CF252CA97700E513B0 /* MyTableViewCell.m */; };
-		57A1E7D7252CA97800E513B0 /* Student.m in Sources */ = {isa = PBXBuildFile; fileRef = 57A1E7D0252CA97800E513B0 /* Student.m */; };
-		57A1E7D8252CA97800E513B0 /* DetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 57A1E7D2252CA97800E513B0 /* DetailViewController.m */; };
-		57A1E7D9252CA97800E513B0 /* TableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 57A1E7D5252CA97800E513B0 /* TableViewController.m */; };
+		57A1E7EF2530AE6000E513B0 /* ZZDownloadTask.m in Sources */ = {isa = PBXBuildFile; fileRef = 57A1E7EE2530AE6000E513B0 /* ZZDownloadTask.m */; };
 		89175DBD806F076FACE1BEE2 /* Pods_MultiselectDownloadTable_MultiselectDownloadTableUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DD5CDEA99EF53206C4EC2B56 /* Pods_MultiselectDownloadTable_MultiselectDownloadTableUITests.framework */; };
 		A159928A186B79F609FBA825 /* Pods_MultiselectDownloadTable.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FE2DED566ED4DF271EDEF1DD /* Pods_MultiselectDownloadTable.framework */; };
 /* End PBXBuildFile section */
@@ -71,14 +68,8 @@
 		57A1E7C3252C1D2A00E513B0 /* MultiselectTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MultiselectTableViewCell.m; sourceTree = "<group>"; };
 		57A1E7C8252C26E700E513B0 /* DownloadModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DownloadModel.h; sourceTree = "<group>"; };
 		57A1E7C9252C26E700E513B0 /* DownloadModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DownloadModel.m; sourceTree = "<group>"; };
-		57A1E7CE252CA97700E513B0 /* DetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailViewController.h; sourceTree = "<group>"; };
-		57A1E7CF252CA97700E513B0 /* MyTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyTableViewCell.m; sourceTree = "<group>"; };
-		57A1E7D0252CA97800E513B0 /* Student.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Student.m; sourceTree = "<group>"; };
-		57A1E7D1252CA97800E513B0 /* TableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TableViewController.h; sourceTree = "<group>"; };
-		57A1E7D2252CA97800E513B0 /* DetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailViewController.m; sourceTree = "<group>"; };
-		57A1E7D3252CA97800E513B0 /* Student.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Student.h; sourceTree = "<group>"; };
-		57A1E7D4252CA97800E513B0 /* MyTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyTableViewCell.h; sourceTree = "<group>"; };
-		57A1E7D5252CA97800E513B0 /* TableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TableViewController.m; sourceTree = "<group>"; };
+		57A1E7ED2530AE6000E513B0 /* ZZDownloadTask.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZZDownloadTask.h; sourceTree = "<group>"; };
+		57A1E7EE2530AE6000E513B0 /* ZZDownloadTask.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZZDownloadTask.m; sourceTree = "<group>"; };
 		772FA14A5CD8030A0596BCA0 /* Pods-MultiselectDownloadTable.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MultiselectDownloadTable.debug.xcconfig"; path = "Target Support Files/Pods-MultiselectDownloadTable/Pods-MultiselectDownloadTable.debug.xcconfig"; sourceTree = "<group>"; };
 		DD5CDEA99EF53206C4EC2B56 /* Pods_MultiselectDownloadTable_MultiselectDownloadTableUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MultiselectDownloadTable_MultiselectDownloadTableUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F0F81F00C7768EE2C0295995 /* Pods-MultiselectDownloadTableTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MultiselectDownloadTableTests.release.xcconfig"; path = "Target Support Files/Pods-MultiselectDownloadTableTests/Pods-MultiselectDownloadTableTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -155,20 +146,14 @@
 				57A1E7BD252B61A700E513B0 /* MultiselectTableViewController.m */,
 				57A1E7C2252C1D2A00E513B0 /* MultiselectTableViewCell.h */,
 				57A1E7C3252C1D2A00E513B0 /* MultiselectTableViewCell.m */,
+				57A1E7ED2530AE6000E513B0 /* ZZDownloadTask.h */,
+				57A1E7EE2530AE6000E513B0 /* ZZDownloadTask.m */,
 				57A1E7C8252C26E700E513B0 /* DownloadModel.h */,
 				57A1E7C9252C26E700E513B0 /* DownloadModel.m */,
 				57A1E787252B2E0B00E513B0 /* ViewController.h */,
 				57A1E788252B2E0B00E513B0 /* ViewController.m */,
 				57A1E78A252B2E0B00E513B0 /* Main.storyboard */,
 				57A1E78D252B2E0D00E513B0 /* Assets.xcassets */,
-				57A1E7CE252CA97700E513B0 /* DetailViewController.h */,
-				57A1E7D2252CA97800E513B0 /* DetailViewController.m */,
-				57A1E7D4252CA97800E513B0 /* MyTableViewCell.h */,
-				57A1E7CF252CA97700E513B0 /* MyTableViewCell.m */,
-				57A1E7D3252CA97800E513B0 /* Student.h */,
-				57A1E7D0252CA97800E513B0 /* Student.m */,
-				57A1E7D1252CA97800E513B0 /* TableViewController.h */,
-				57A1E7D5252CA97800E513B0 /* TableViewController.m */,
 				57A1E78F252B2E0D00E513B0 /* LaunchScreen.storyboard */,
 				57A1E792252B2E0D00E513B0 /* Info.plist */,
 				57A1E793252B2E0D00E513B0 /* main.m */,
@@ -204,7 +189,6 @@
 				191C3093799D2E7B578E044B /* Pods-MultiselectDownloadTableTests.debug.xcconfig */,
 				F0F81F00C7768EE2C0295995 /* Pods-MultiselectDownloadTableTests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -446,11 +430,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				57A1E789252B2E0B00E513B0 /* ViewController.m in Sources */,
-				57A1E7D6252CA97800E513B0 /* MyTableViewCell.m in Sources */,
-				57A1E7D8252CA97800E513B0 /* DetailViewController.m in Sources */,
-				57A1E7D9252CA97800E513B0 /* TableViewController.m in Sources */,
 				57A1E783252B2E0B00E513B0 /* AppDelegate.m in Sources */,
-				57A1E7D7252CA97800E513B0 /* Student.m in Sources */,
+				57A1E7EF2530AE6000E513B0 /* ZZDownloadTask.m in Sources */,
 				57A1E7C4252C1D2A00E513B0 /* MultiselectTableViewCell.m in Sources */,
 				57A1E7BE252B61A700E513B0 /* MultiselectTableViewController.m in Sources */,
 				57A1E794252B2E0D00E513B0 /* main.m in Sources */,

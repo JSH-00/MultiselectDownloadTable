@@ -6,6 +6,7 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "ZZDownloadTask.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
@@ -31,6 +32,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, strong) NSString* scene;
 @property (nonatomic, strong) NSString* sort;
 @property (nonatomic, strong) NSString* time_new;
+@property (nonatomic, strong) ZZDownloadTask *downloadTask;
 - (instancetype)initWithDictionary:(NSDictionary *)dict;
 @end
 
