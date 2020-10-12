@@ -59,14 +59,14 @@
         make.bottom.equalTo(self.view.mas_safeAreaLayoutGuideBottom);
     }];
     
-    UIButton *select_btn = [UIButton buttonWithType:UIButtonTypeCustom];
-    self.selectBtn = select_btn;
+    UIButton *selectBtn = [UIButton buttonWithType:UIButtonTypeCustom];
+    self.selectBtn = selectBtn;
     self.isSelectStyle = NO;
-    [self.view addSubview:select_btn];
-    [select_btn addTarget:self action:@selector(selectButton) forControlEvents:UIControlEventTouchUpInside];
-    [select_btn setTitle:@"多选" forState:UIControlStateNormal];
-    select_btn.titleLabel.font = [UIFont fontWithName:@"PingFangSC-Semibold" size:16];
-    [select_btn mas_makeConstraints:^(MASConstraintMaker *make) {
+    [self.view addSubview:selectBtn];
+    [selectBtn addTarget:self action:@selector(selectButton) forControlEvents:UIControlEventTouchUpInside];
+    [selectBtn setTitle:@"多选" forState:UIControlStateNormal];
+    selectBtn.titleLabel.font = [UIFont fontWithName:@"PingFangSC-Semibold" size:16];
+    [selectBtn mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.equalTo(self.topView.mas_top).with.offset(15);
         make.left.equalTo(self.topView.mas_left).with.offset(45);
     }];
