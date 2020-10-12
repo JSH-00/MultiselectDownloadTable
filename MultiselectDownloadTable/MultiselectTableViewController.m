@@ -4,7 +4,7 @@
 //
 //  Created by JSH on 2020/10/5.
 //
-
+#import "Masonry.h"
 #import "MultiselectTableViewController.h"
 #import "MultiselectTableViewCell.h"
 #import <AFNetworking/AFNetworking.h>
@@ -33,38 +33,54 @@
     [self reloadDownloadList];
     [self.navigationController setNavigationBarHidden:YES animated:YES]; // 隐藏NavigateBar
     
+    UIView * topView = [UIView new];
+    self.topView = topView;
+    topView.backgroundColor = [UIColor colorWithRed:18/255.0 green:18/255.0 blue:18/255.0 alpha:1/1.0];
+    [self.view addSubview:topView];
+    [topView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.top.equalTo(self.view.mas_safeAreaLayoutGuideTop);
+        make.left.equalTo(self.view.mas_safeAreaLayoutGuideLeft);
+        make.right.equalTo(self.view.mas_safeAreaLayoutGuideRight);
+        make.bottom.equalTo(self.view.mas_safeAreaLayoutGuideTop).with.offset(64);
+    }];
+
     UITableView * multiselectTable = [UITableView new];
     [multiselectTable registerClass:[MultiselectTableViewCell class] forCellReuseIdentifier:@"PhotoCell"];// 注册 GestureTableViewCell
     
     self.multiselectTable = multiselectTable;
     self.multiselectTable.delegate = self;
     self.multiselectTable.dataSource = self;
-    multiselectTable.frame = CGRectMake(0, 64, CGRectGetWidth(self.view.frame), CGRectGetHeight(self.view.frame));
     multiselectTable.backgroundColor = [UIColor grayColor];
     [self.view addSubview:multiselectTable];
-    
-    UIView * topView = [UIView new];
-    self.topView = topView;
-    topView.frame = CGRectMake(0, 0, CGRectGetWidth(self.view.frame), 64);
-    topView.backgroundColor = [UIColor colorWithRed:18/255.0 green:18/255.0 blue:18/255.0 alpha:1/1.0];
-    [self.view addSubview:topView];
+    [multiselectTable mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.top.equalTo(self.topView.mas_bottom);
+        make.left.equalTo(self.view.mas_safeAreaLayoutGuideLeft);
+        make.right.equalTo(self.view.mas_safeAreaLayoutGuideRight);
+        make.bottom.equalTo(self.view.mas_safeAreaLayoutGuideBottom);
+    }];
     
     UIButton *select_btn = [UIButton buttonWithType:UIButtonTypeCustom];
     self.selectBtn = select_btn;
     self.isSelectStyle = NO;
     [self.view addSubview:select_btn];
     [select_btn addTarget:self action:@selector(selectButton) forControlEvents:UIControlEventTouchUpInside];
-    select_btn.frame = CGRectMake(70, 31, 50 ,22);
     [select_btn setTitle:@"多选" forState:UIControlStateNormal];
     select_btn.titleLabel.font = [UIFont fontWithName:@"PingFangSC-Semibold" size:16];
+    [select_btn mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.top.equalTo(self.topView.mas_top).with.offset(15);
+        make.left.equalTo(self.topView.mas_left).with.offset(45);
+    }];
     
     UIButton *downloadButton = [UIButton buttonWithType:UIButtonTypeCustom];
     self.downloadButton = downloadButton;
     [self.view addSubview:downloadButton];
     [downloadButton addTarget:self action:@selector(downloadSelectButton) forControlEvents:UIControlEventTouchUpInside];
-    downloadButton.frame = CGRectMake(CGRectGetWidth(self.view.frame) - 120, 31, 50, 22);
     [downloadButton setTitle:@"下载" forState:UIControlStateNormal];
     downloadButton.titleLabel.font = [UIFont fontWithName:@"PingFangSC-Semibold" size:16];
+    [downloadButton mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.top.equalTo(self.topView.mas_top).with.offset(15);
+        make.right.equalTo(self.topView.mas_right).with.offset(-45);
+    }];
     NSLog(@"sandbox:%@",NSHomeDirectory());
 }
 
