@@ -120,8 +120,13 @@
 {
     NSArray<DownloadModel *> *selecedArray = [NSMutableArray new];
     NSMutableIndexSet *insets = [[NSMutableIndexSet alloc] init];
+    // 枚举方法遍历，拿到未下载的行号，存入索引中
     [[self.multiselectTable indexPathsForSelectedRows] enumerateObjectsUsingBlock:^(NSIndexPath * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
-        [insets addIndex:obj.row]; // 枚举方法遍历，拿到所选择的行号，存入索引中
+        if ([self.multiselectArray objectAtIndex:obj.row].downloadTask.alreadyDownloaded == NO)
+        {
+            [insets addIndex:obj.row];
+            [self.multiselectArray objectAtIndex:obj.row].downloadTask.alreadyDownloaded = YES;
+        }
     }];
     selecedArray = [self.multiselectArray objectsAtIndexes:insets];
     [self asyncDownload:selecedArray];
@@ -182,6 +187,7 @@
             downloadModelInfo.downloadTask.urlString = downloadModelInfo.download;
             downloadModelInfo.downloadTask.progress = 0.0;
             downloadModelInfo.downloadTask.uniqueID = [NSString stringWithFormat:@"task%d",i];
+            downloadModelInfo.downloadTask.alreadyDownloaded = NO;
             [self.multiselectArray addObject:downloadModelInfo];
         }
         [self.multiselectTable reloadData];
@@ -200,13 +206,6 @@
             [self downloadFromURL:[array objectAtIndex:idx].download];
         });
     }];
-
-//    for (int i = 0; i < array.count; i++)
-//    {
-//        dispatch_async(queue, ^{
-//            [self downloadFromURL:[array objectAtIndex:i].download];
-//        });
-//    }
 }
 
 - (NSURLSession *)session

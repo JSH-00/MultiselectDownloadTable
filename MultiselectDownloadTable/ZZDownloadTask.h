@@ -13,6 +13,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, strong) NSString *urlString;
 @property (nonatomic, assign) double progress;
 @property (nonatomic, strong) NSString *uniqueID;
+@property (nonatomic, assign) BOOL alreadyDownloaded;
 @end
 
 NS_ASSUME_NONNULL_END
