@@ -54,7 +54,7 @@
 - (void)setCellInfo:(DownloadModel *)downloadModel
 {
     [self.downloadThumbnail sd_setImageWithURL:[NSURL URLWithString:downloadModel.thumbnail]
-                          placeholderImage:[UIImage imageNamed:@"small_one.png"]];
+                          placeholderImage:[UIImage imageNamed:@"loading.png"]];
     self.cellTaskID = downloadModel.downloadTask.uniqueID;
 }
 
