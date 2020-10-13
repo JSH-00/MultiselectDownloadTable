@@ -11,7 +11,7 @@
 #import "DownloadModel.h"
 #import "ZZDownloadTask.h"
 
-@interface MultiselectTableViewController ()<UITableViewDataSource, UITableViewDelegate, NSURLSessionDownloadDelegate>
+@interface MultiselectTableViewController ()<UITableViewDataSource, UITableViewDelegate>
 @property (nonatomic ,weak) UITableView * multiselectTable;
 @property (nonatomic, weak)UIView * topView;
 @property (nonatomic ,strong)NSMutableArray<DownloadModel *>*multiselectArray;
@@ -22,8 +22,6 @@
 @property (nonatomic, strong) NSURLSession* session;
 - (void)reloadDownloadList;
 - (void)downloadFromURL:(NSString *)downloadURL;
-- (void)asyncDownload:(NSArray
- <DownloadModel *>*)array;
 @end
 
 @implementation MultiselectTableViewController
@@ -81,7 +79,6 @@
         make.top.equalTo(self.topView.mas_top).with.offset(15);
         make.right.equalTo(self.topView.mas_right).with.offset(-45);
     }];
-    NSLog(@"sandbox:%@",NSHomeDirectory());
 }
 
 #pragma mark - Table view data source
@@ -145,8 +142,11 @@
         }
     }];
     selecedArray = [self.multiselectArray objectsAtIndexes:insets];
-    [self asyncDownload:selecedArray];
+    [selecedArray enumerateObjectsUsingBlock:^(DownloadModel * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+        [self downloadFromURL:[selecedArray objectAtIndex:idx].download];
+    }];
 }
+
 - (UIStatusBarStyle)preferredStatusBarStyle {
     return UIStatusBarStyleLightContent;
 }
@@ -186,13 +186,14 @@
         NSLog(@"多选");
     }
 }
+
 # pragma mark - reloadList
 - (void)reloadDownloadList
 {
     self.multiselectArray = [NSMutableArray new];
     AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
     manager.responseSerializer = [AFJSONResponseSerializer serializer];
-    manager.responseSerializer.acceptableContentTypes = [NSSet setWithObject:@"text/html"]; //指定接收信号为image/png
+    manager.responseSerializer.acceptableContentTypes = [NSSet setWithObject:@"text/html"];
     [manager GET:@"https://zerozerorobotics.com/api/v1/showcase/no-scene.json?skip=0&take=10" parameters:nil progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
         NSLog(@"请求成功");
         NSMutableArray * candyDictionaryArray = responseObject; //返回为Array类型
@@ -213,83 +214,49 @@
     }];
     [self.multiselectTable reloadData];
 }
+
 # pragma mark - Download From URL
-- (void)asyncDownload:(NSArray <DownloadModel *>*)array
-{
-    dispatch_queue_t queue = dispatch_queue_create("com.vc.downloadQueue", DISPATCH_QUEUE_CONCURRENT);
-    [array enumerateObjectsUsingBlock:^(DownloadModel * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
-        dispatch_async(queue, ^{
-            [self downloadFromURL:[array objectAtIndex:idx].download];
-        });
-    }];
-}
-
-- (NSURLSession *)session
-{
-    if (!_session)
-    {
-        NSURLSessionConfiguration *cfg = [NSURLSessionConfiguration defaultSessionConfiguration];
-        self.session = [NSURLSession sessionWithConfiguration:cfg delegate:self delegateQueue:[NSOperationQueue mainQueue]];
-    }
-    return _session;
-}
-
 - (void)downloadFromURL:(NSString *)downloadURL
 {
-    NSLog(@"%@",downloadURL);
-    NSURL* url = [NSURL URLWithString:downloadURL];
-    // 创建任务
-    self.downloadTask = [self.session downloadTaskWithURL:url];
-    // 开始任务
-    [self.downloadTask resume];
-}
+    AFURLSessionManager *manager = [[AFURLSessionManager alloc] initWithSessionConfiguration:[NSURLSessionConfiguration defaultSessionConfiguration]];
+    NSURL *url = [NSURL URLWithString:downloadURL];
+    NSURLRequest *request = [NSURLRequest requestWithURL:url];
+    /* 下载路径创建，指定下载到沙盒Documents/Announcement文件夹中 */
+    NSString *path = [NSHomeDirectory() stringByAppendingPathComponent:@"Documents/Announcement"];
+    NSFileManager *fileManager = [NSFileManager defaultManager];
+    BOOL isDir = NO;
+    BOOL existed = [fileManager fileExistsAtPath:path isDirectory:&isDir];
+    if (!(isDir && existed)) {
+        [fileManager createDirectoryAtPath:path withIntermediateDirectories:YES attributes:nil error:nil];
+    }
+    NSString *filePath = [path stringByAppendingPathComponent:url.lastPathComponent];
 
-#pragma mark -- NSURLSessionDownloadDelegate
-/**
- *  下载完毕会调用
- *
- *  @param location     文件临时地址
- */
-- (void)URLSession:(NSURLSession *)session downloadTask:(NSURLSessionDownloadTask *)downloadTask
-didFinishDownloadingToURL:(NSURL *)location
-{
-    NSString *caches = [NSSearchPathForDirectoriesInDomains(NSCachesDirectory, NSUserDomainMask, YES) lastObject];
-    // response.suggestedFilename ： 建议使用的文件名，一般跟服务器端的文件名一致
-    NSString *file = [caches stringByAppendingPathComponent:downloadTask.response.suggestedFilename];
+    /* 开始请求下载 */
+    self.downloadTask = [manager downloadTaskWithRequest:request progress:^(NSProgress * _Nonnull downloadProgress) {
+        NSLog(@"下载进度：%.0f％，线程：%@", downloadProgress.fractionCompleted * 100, [NSThread currentThread]);
+        dispatch_async(dispatch_get_main_queue(), ^{
+            //进行UI操作，需要切换到主线
+            NSURL *url =  request.URL;
+            NSString *urlString = [url absoluteString];
+            __block DownloadModel * currentModel = nil;
+            [self.multiselectArray enumerateObjectsUsingBlock:^(DownloadModel * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+                if ([urlString isEqualToString:obj.download]) {
+                    currentModel = obj;
+                    *stop = YES;
+                }
+            }];
+            double progress = downloadProgress.fractionCompleted;
+            currentModel.downloadTask.progress = progress;
+            [[NSNotificationCenter defaultCenter] postNotificationName:@"Download_Progress_Update" object:currentModel];
+        });
 
-    // 将临时文件剪切或者复制Caches文件夹
-    NSFileManager *mgr = [NSFileManager defaultManager];
+    } destination:^NSURL * _Nonnull(NSURL * _Nonnull targetPath, NSURLResponse * _Nonnull response) {
 
-    // AtPath : 剪切前的文件路径
-    // ToPath : 剪切后的文件路径
-    [mgr moveItemAtPath:location.path toPath:file error:nil];
+        return [NSURL fileURLWithPath:filePath];
 
-    // 提示下载完成
-    [[[UIAlertView alloc] initWithTitle:@"下载完成" message:downloadTask.response.suggestedFilename delegate:self cancelButtonTitle:@"知道了" otherButtonTitles: nil] show];
-}
-
-/**
- *  监听下载进度，totalBytesWritten/totalBytesExpectedToWrite
- *  @param bytesWritten              这次写入的大小
- *  @param totalBytesWritten         已经写入沙盒的大小
- *  @param totalBytesExpectedToWrite 文件总大小
- */
-- (void)URLSession:(NSURLSession *)session downloadTask:(NSURLSessionDownloadTask *)downloadTask
-      didWriteData:(int64_t)bytesWritten
- totalBytesWritten:(int64_t)totalBytesWritten
-totalBytesExpectedToWrite:(int64_t)totalBytesExpectedToWrite
-{
-    NSURL *url =  downloadTask.currentRequest.URL;
-    NSString *urlString = [url absoluteString];
-    __block DownloadModel * currentModel = nil;
-    [self.multiselectArray enumerateObjectsUsingBlock:^(DownloadModel * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
-        if ([urlString isEqualToString:obj.download]) {
-            currentModel = obj;
-            *stop = YES;
-        }
+    } completionHandler:^(NSURLResponse * _Nonnull response, NSURL * _Nullable filePath, NSError * _Nullable error) {
+        [[[UIAlertView alloc] initWithTitle:@"下载完成" message:self.downloadTask.response.suggestedFilename delegate:self cancelButtonTitle:@"知道了" otherButtonTitles: nil] show];
     }];
-    double progress = (double)totalBytesWritten/(double)totalBytesExpectedToWrite;
-    currentModel.downloadTask.progress = progress;
-    [[NSNotificationCenter defaultCenter] postNotificationName:@"Download_Progress_Update" object:currentModel];
+    [self.downloadTask resume];
 }
 @end
