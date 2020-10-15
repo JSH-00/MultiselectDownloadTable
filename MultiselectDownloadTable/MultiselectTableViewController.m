@@ -7,21 +7,19 @@
 #import "Masonry.h"
 #import "MultiselectTableViewController.h"
 #import "MultiselectTableViewCell.h"
-#import <AFNetworking/AFNetworking.h>
-#import "DownloadModel.h"
 #import "ZZDownloadTask.h"
-
+#import "ZZDownloadManager.h"
 @interface MultiselectTableViewController ()<UITableViewDataSource, UITableViewDelegate>
-@property (nonatomic ,weak) UITableView * multiselectTable;
+@property (nonatomic, weak) UITableView * multiselectTable;
 @property (nonatomic, weak)UIView * topView;
-@property (nonatomic ,strong)NSMutableArray<DownloadModel *>*multiselectArray;
+@property (nonatomic, strong)NSMutableArray<DownloadModel *>*multiselectArray;
 @property (nonatomic, weak) UIButton * selectBtn;
 @property (nonatomic, weak) UIButton * downloadButton;
 @property (nonatomic, assign)BOOL isSelectStyle;
 @property (nonatomic, strong) NSURLSessionDownloadTask* downloadTask;
 @property (nonatomic, strong) NSURLSession* session;
+@property (nonatomic, assign) NSInteger maxDownloadNum;
 - (void)reloadDownloadList;
-- (void)downloadFromURL:(NSString *)downloadURL;
 @end
 
 @implementation MultiselectTableViewController
@@ -69,6 +67,33 @@
         make.left.equalTo(self.topView.mas_left).with.offset(45);
     }];
     
+    UILabel * maxDownloadLabel = [UILabel new];
+    maxDownloadLabel.text = @"最大下载数";
+    maxDownloadLabel.textColor = [UIColor whiteColor];
+    maxDownloadLabel.font = [UIFont fontWithName:@"PingFangSC-Semibold" size:16];
+    [self.view addSubview:maxDownloadLabel];
+    [maxDownloadLabel mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.top.equalTo(self.topView.mas_top).with.offset(22);
+        make.left.equalTo(self.topView.mas_left).with.offset(CGRectGetWidth(self.view.frame) * 0.5 - 85);
+    }];
+
+    NSInteger maxDownloadNum = 3;
+    self.maxDownloadNum = maxDownloadNum;
+    UITextField *maxDownloadTextField =  [UITextField new];
+    maxDownloadTextField.borderStyle = UITextBorderStyleRoundedRect;
+    maxDownloadTextField.backgroundColor = [UIColor whiteColor];
+    maxDownloadTextField.text = [NSString stringWithFormat:@"%ld",(long)self.maxDownloadNum];
+    maxDownloadTextField.font = [UIFont fontWithName:@"PingFangSC-Semibold" size:16];
+    [maxDownloadTextField setTextAlignment:NSTextAlignmentCenter];
+    [self.view addSubview:maxDownloadTextField];
+    [maxDownloadTextField mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.top.equalTo(self.topView.mas_top).with.offset(15);
+        make.left.equalTo(self.topView.mas_left).with.offset(CGRectGetWidth(self.view.frame) * 0.5);
+    }];
+    [maxDownloadTextField addTarget:self
+                   action:@selector(maxDownloadTextFieldDidChange:)
+         forControlEvents:UIControlEventEditingChanged];
+
     UIButton *downloadButton = [UIButton buttonWithType:UIButtonTypeCustom];
     self.downloadButton = downloadButton;
     [self.view addSubview:downloadButton];
@@ -142,9 +167,14 @@
         }
     }];
     selecedArray = [self.multiselectArray objectsAtIndexes:insets];
-    [selecedArray enumerateObjectsUsingBlock:^(DownloadModel * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
-        [self downloadFromURL:[selecedArray objectAtIndex:idx].download];
-    }];
+    ZZDownloadManager * zzDownloadManager = [ZZDownloadManager new];
+    [zzDownloadManager downloadFromZZDownloadTaskArray:selecedArray andMaxDownloadNum:self.maxDownloadNum];
+}
+
+- (void) maxDownloadTextFieldDidChange:(UITextField*) sender {
+    // 文本内容
+    NSInteger times = [sender.text integerValue];
+    self.maxDownloadNum = times;
 }
 
 - (UIStatusBarStyle)preferredStatusBarStyle {
@@ -213,50 +243,5 @@
         NSLog(@"%@",error);
     }];
     [self.multiselectTable reloadData];
-}
-
-# pragma mark - Download From URL
-- (void)downloadFromURL:(NSString *)downloadURL
-{
-    AFURLSessionManager *manager = [[AFURLSessionManager alloc] initWithSessionConfiguration:[NSURLSessionConfiguration defaultSessionConfiguration]];
-    NSURL *url = [NSURL URLWithString:downloadURL];
-    NSURLRequest *request = [NSURLRequest requestWithURL:url];
-    /* 下载路径创建，指定下载到沙盒Documents/Announcement文件夹中 */
-    NSString *path = [NSHomeDirectory() stringByAppendingPathComponent:@"Documents/Announcement"];
-    NSFileManager *fileManager = [NSFileManager defaultManager];
-    BOOL isDir = NO;
-    BOOL existed = [fileManager fileExistsAtPath:path isDirectory:&isDir];
-    if (!(isDir && existed)) {
-        [fileManager createDirectoryAtPath:path withIntermediateDirectories:YES attributes:nil error:nil];
-    }
-    NSString *filePath = [path stringByAppendingPathComponent:url.lastPathComponent];
-
-    /* 开始请求下载 */
-    self.downloadTask = [manager downloadTaskWithRequest:request progress:^(NSProgress * _Nonnull downloadProgress) {
-        NSLog(@"下载进度：%.0f％，线程：%@", downloadProgress.fractionCompleted * 100, [NSThread currentThread]);
-        dispatch_async(dispatch_get_main_queue(), ^{
-            //进行UI操作，需要切换到主线
-            NSURL *url =  request.URL;
-            NSString *urlString = [url absoluteString];
-            __block DownloadModel * currentModel = nil;
-            [self.multiselectArray enumerateObjectsUsingBlock:^(DownloadModel * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
-                if ([urlString isEqualToString:obj.download]) {
-                    currentModel = obj;
-                    *stop = YES;
-                }
-            }];
-            double progress = downloadProgress.fractionCompleted;
-            currentModel.downloadTask.progress = progress;
-            [[NSNotificationCenter defaultCenter] postNotificationName:@"Download_Progress_Update" object:currentModel];
-        });
-
-    } destination:^NSURL * _Nonnull(NSURL * _Nonnull targetPath, NSURLResponse * _Nonnull response) {
-
-        return [NSURL fileURLWithPath:filePath];
-
-    } completionHandler:^(NSURLResponse * _Nonnull response, NSURL * _Nullable filePath, NSError * _Nullable error) {
-        [[[UIAlertView alloc] initWithTitle:@"下载完成" message:self.downloadTask.response.suggestedFilename delegate:self cancelButtonTitle:@"知道了" otherButtonTitles: nil] show];
-    }];
-    [self.downloadTask resume];
 }
 @end

@@ -20,6 +20,7 @@
 		57A1E7C4252C1D2A00E513B0 /* MultiselectTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 57A1E7C3252C1D2A00E513B0 /* MultiselectTableViewCell.m */; };
 		57A1E7CA252C26E700E513B0 /* DownloadModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 57A1E7C9252C26E700E513B0 /* DownloadModel.m */; };
 		57A1E7EF2530AE6000E513B0 /* ZZDownloadTask.m in Sources */ = {isa = PBXBuildFile; fileRef = 57A1E7EE2530AE6000E513B0 /* ZZDownloadTask.m */; };
+		57A1E7FE2535D7A700E513B0 /* ZZDownloadManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 57A1E7FD2535D7A700E513B0 /* ZZDownloadManager.m */; };
 		89175DBD806F076FACE1BEE2 /* Pods_MultiselectDownloadTable_MultiselectDownloadTableUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DD5CDEA99EF53206C4EC2B56 /* Pods_MultiselectDownloadTable_MultiselectDownloadTableUITests.framework */; };
 		A159928A186B79F609FBA825 /* Pods_MultiselectDownloadTable.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FE2DED566ED4DF271EDEF1DD /* Pods_MultiselectDownloadTable.framework */; };
 /* End PBXBuildFile section */
@@ -70,6 +71,8 @@
 		57A1E7C9252C26E700E513B0 /* DownloadModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DownloadModel.m; sourceTree = "<group>"; };
 		57A1E7ED2530AE6000E513B0 /* ZZDownloadTask.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZZDownloadTask.h; sourceTree = "<group>"; };
 		57A1E7EE2530AE6000E513B0 /* ZZDownloadTask.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZZDownloadTask.m; sourceTree = "<group>"; };
+		57A1E7FC2535D7A700E513B0 /* ZZDownloadManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZZDownloadManager.h; sourceTree = "<group>"; };
+		57A1E7FD2535D7A700E513B0 /* ZZDownloadManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZZDownloadManager.m; sourceTree = "<group>"; };
 		772FA14A5CD8030A0596BCA0 /* Pods-MultiselectDownloadTable.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MultiselectDownloadTable.debug.xcconfig"; path = "Target Support Files/Pods-MultiselectDownloadTable/Pods-MultiselectDownloadTable.debug.xcconfig"; sourceTree = "<group>"; };
 		DD5CDEA99EF53206C4EC2B56 /* Pods_MultiselectDownloadTable_MultiselectDownloadTableUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MultiselectDownloadTable_MultiselectDownloadTableUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F0F81F00C7768EE2C0295995 /* Pods-MultiselectDownloadTableTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MultiselectDownloadTableTests.release.xcconfig"; path = "Target Support Files/Pods-MultiselectDownloadTableTests/Pods-MultiselectDownloadTableTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -148,6 +151,8 @@
 				57A1E7C3252C1D2A00E513B0 /* MultiselectTableViewCell.m */,
 				57A1E7ED2530AE6000E513B0 /* ZZDownloadTask.h */,
 				57A1E7EE2530AE6000E513B0 /* ZZDownloadTask.m */,
+				57A1E7FC2535D7A700E513B0 /* ZZDownloadManager.h */,
+				57A1E7FD2535D7A700E513B0 /* ZZDownloadManager.m */,
 				57A1E7C8252C26E700E513B0 /* DownloadModel.h */,
 				57A1E7C9252C26E700E513B0 /* DownloadModel.m */,
 				57A1E787252B2E0B00E513B0 /* ViewController.h */,
@@ -434,6 +439,7 @@
 				57A1E7EF2530AE6000E513B0 /* ZZDownloadTask.m in Sources */,
 				57A1E7C4252C1D2A00E513B0 /* MultiselectTableViewCell.m in Sources */,
 				57A1E7BE252B61A700E513B0 /* MultiselectTableViewController.m in Sources */,
+				57A1E7FE2535D7A700E513B0 /* ZZDownloadManager.m in Sources */,
 				57A1E794252B2E0D00E513B0 /* main.m in Sources */,
 				57A1E7CA252C26E700E513B0 /* DownloadModel.m in Sources */,
 			);

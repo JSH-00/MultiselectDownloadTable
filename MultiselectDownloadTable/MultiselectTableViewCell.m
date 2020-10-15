@@ -51,11 +51,16 @@
     return self;
 }
 
+- (void)reset {
+    self.downloadPregress.progress = 0.0;
+    self.downloadLabel.text = @"";
+}
+
 - (void)setCellInfo:(DownloadModel *)downloadModel
 {
+    [self reset];
     [self.downloadThumbnail sd_setImageWithURL:[NSURL URLWithString:downloadModel.thumbnail]
                           placeholderImage:[UIImage imageNamed:@"loading.png"]];
     self.cellTaskID = downloadModel.downloadTask.uniqueID;
 }
-
 @end
