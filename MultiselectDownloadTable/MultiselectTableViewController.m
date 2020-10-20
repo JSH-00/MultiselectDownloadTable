@@ -9,6 +9,7 @@
 #import "MultiselectTableViewCell.h"
 #import "ZZDownloadTask.h"
 #import "ZZDownloadManager.h"
+#import "DownloadRealmModel.h"
 @interface MultiselectTableViewController ()<UITableViewDataSource, UITableViewDelegate>
 @property (nonatomic, weak) UITableView * multiselectTable;
 @property (nonatomic, weak)UIView * topView;
@@ -28,7 +29,7 @@
     [super viewDidLoad];
     [self reloadDownloadList];
     [self.navigationController setNavigationBarHidden:YES animated:YES]; // 隐藏NavigateBar
-    
+    NSLog(@"%@",NSHomeDirectory());
     UIView * topView = [UIView new];
     self.topView = topView;
     topView.backgroundColor = [UIColor colorWithRed:18/255.0 green:18/255.0 blue:18/255.0 alpha:1/1.0];
@@ -227,6 +228,8 @@
     [manager GET:@"https://zerozerorobotics.com/api/v1/showcase/no-scene.json?skip=0&take=10" parameters:nil progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
         NSLog(@"请求成功");
         NSMutableArray * candyDictionaryArray = responseObject; //返回为Array类型
+        RLMRealm *realm = [RLMRealm defaultRealm];
+        [realm beginWriteTransaction];
         for (int i = 0 ; i < candyDictionaryArray.count ; i++)
         {
             DownloadModel *downloadModelInfo = [[DownloadModel alloc] initWithDictionary:[candyDictionaryArray objectAtIndex:i]];
@@ -235,8 +238,12 @@
             downloadModelInfo.downloadTask.progress = 0.0;
             downloadModelInfo.downloadTask.uniqueID = [NSString stringWithFormat:@"task%d",i];
             downloadModelInfo.downloadTask.alreadyDownloaded = NO;
+            DownloadRealmModel *downloadRealModelInfo = [DownloadRealmModel new];
+            [downloadRealModelInfo initWithDownloadMode:downloadModelInfo];
+            [realm addOrUpdateObject:downloadRealModelInfo];
             [self.multiselectArray addObject:downloadModelInfo];
         }
+        [realm commitWriteTransaction];
         [self.multiselectTable reloadData];
     } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
         NSLog(@"请求失败");

@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		2133EBC7E24B5BBA6CEDE941 /* Pods_MultiselectDownloadTableTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5767B81716E6EBA6D7B60EB6 /* Pods_MultiselectDownloadTableTests.framework */; };
+		573857CC253D510B00DAF914 /* DownloadRealmModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 573857CB253D510B00DAF914 /* DownloadRealmModel.m */; };
 		57A1E783252B2E0B00E513B0 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 57A1E782252B2E0B00E513B0 /* AppDelegate.m */; };
 		57A1E789252B2E0B00E513B0 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 57A1E788252B2E0B00E513B0 /* ViewController.m */; };
 		57A1E78C252B2E0B00E513B0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 57A1E78A252B2E0B00E513B0 /* Main.storyboard */; };
@@ -21,6 +22,8 @@
 		57A1E7CA252C26E700E513B0 /* DownloadModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 57A1E7C9252C26E700E513B0 /* DownloadModel.m */; };
 		57A1E7EF2530AE6000E513B0 /* ZZDownloadTask.m in Sources */ = {isa = PBXBuildFile; fileRef = 57A1E7EE2530AE6000E513B0 /* ZZDownloadTask.m */; };
 		57A1E7FE2535D7A700E513B0 /* ZZDownloadManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 57A1E7FD2535D7A700E513B0 /* ZZDownloadManager.m */; };
+		57E0911E2539861700E5637C /* libc++.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 57E0911D2539861700E5637C /* libc++.tbd */; };
+		57E091232539862100E5637C /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 57E091222539862100E5637C /* libz.tbd */; };
 		89175DBD806F076FACE1BEE2 /* Pods_MultiselectDownloadTable_MultiselectDownloadTableUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DD5CDEA99EF53206C4EC2B56 /* Pods_MultiselectDownloadTable_MultiselectDownloadTableUITests.framework */; };
 		A159928A186B79F609FBA825 /* Pods_MultiselectDownloadTable.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FE2DED566ED4DF271EDEF1DD /* Pods_MultiselectDownloadTable.framework */; };
 /* End PBXBuildFile section */
@@ -46,6 +49,8 @@
 		0E2F97DF824AFBE83060D31A /* Pods-MultiselectDownloadTable-MultiselectDownloadTableUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MultiselectDownloadTable-MultiselectDownloadTableUITests.debug.xcconfig"; path = "Target Support Files/Pods-MultiselectDownloadTable-MultiselectDownloadTableUITests/Pods-MultiselectDownloadTable-MultiselectDownloadTableUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		191C3093799D2E7B578E044B /* Pods-MultiselectDownloadTableTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MultiselectDownloadTableTests.debug.xcconfig"; path = "Target Support Files/Pods-MultiselectDownloadTableTests/Pods-MultiselectDownloadTableTests.debug.xcconfig"; sourceTree = "<group>"; };
 		2A2418C66ADC352AE72D2515 /* Pods-MultiselectDownloadTable.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MultiselectDownloadTable.release.xcconfig"; path = "Target Support Files/Pods-MultiselectDownloadTable/Pods-MultiselectDownloadTable.release.xcconfig"; sourceTree = "<group>"; };
+		573857CA253D510B00DAF914 /* DownloadRealmModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DownloadRealmModel.h; sourceTree = "<group>"; };
+		573857CB253D510B00DAF914 /* DownloadRealmModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DownloadRealmModel.m; sourceTree = "<group>"; };
 		5767B81716E6EBA6D7B60EB6 /* Pods_MultiselectDownloadTableTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MultiselectDownloadTableTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		57A1E77E252B2E0B00E513B0 /* MultiselectDownloadTable.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MultiselectDownloadTable.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		57A1E781252B2E0B00E513B0 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -73,6 +78,8 @@
 		57A1E7EE2530AE6000E513B0 /* ZZDownloadTask.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZZDownloadTask.m; sourceTree = "<group>"; };
 		57A1E7FC2535D7A700E513B0 /* ZZDownloadManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZZDownloadManager.h; sourceTree = "<group>"; };
 		57A1E7FD2535D7A700E513B0 /* ZZDownloadManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZZDownloadManager.m; sourceTree = "<group>"; };
+		57E0911D2539861700E5637C /* libc++.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libc++.tbd"; path = "usr/lib/libc++.tbd"; sourceTree = SDKROOT; };
+		57E091222539862100E5637C /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
 		772FA14A5CD8030A0596BCA0 /* Pods-MultiselectDownloadTable.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MultiselectDownloadTable.debug.xcconfig"; path = "Target Support Files/Pods-MultiselectDownloadTable/Pods-MultiselectDownloadTable.debug.xcconfig"; sourceTree = "<group>"; };
 		DD5CDEA99EF53206C4EC2B56 /* Pods_MultiselectDownloadTable_MultiselectDownloadTableUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MultiselectDownloadTable_MultiselectDownloadTableUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F0F81F00C7768EE2C0295995 /* Pods-MultiselectDownloadTableTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MultiselectDownloadTableTests.release.xcconfig"; path = "Target Support Files/Pods-MultiselectDownloadTableTests/Pods-MultiselectDownloadTableTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -85,6 +92,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				57E091232539862100E5637C /* libz.tbd in Frameworks */,
+				57E0911E2539861700E5637C /* libc++.tbd in Frameworks */,
 				A159928A186B79F609FBA825 /* Pods_MultiselectDownloadTable.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -111,6 +120,8 @@
 		2072B5AF926BF50E4B5F2BCC /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				57E091222539862100E5637C /* libz.tbd */,
+				57E0911D2539861700E5637C /* libc++.tbd */,
 				FE2DED566ED4DF271EDEF1DD /* Pods_MultiselectDownloadTable.framework */,
 				DD5CDEA99EF53206C4EC2B56 /* Pods_MultiselectDownloadTable_MultiselectDownloadTableUITests.framework */,
 				5767B81716E6EBA6D7B60EB6 /* Pods_MultiselectDownloadTableTests.framework */,
@@ -153,6 +164,8 @@
 				57A1E7EE2530AE6000E513B0 /* ZZDownloadTask.m */,
 				57A1E7FC2535D7A700E513B0 /* ZZDownloadManager.h */,
 				57A1E7FD2535D7A700E513B0 /* ZZDownloadManager.m */,
+				573857CA253D510B00DAF914 /* DownloadRealmModel.h */,
+				573857CB253D510B00DAF914 /* DownloadRealmModel.m */,
 				57A1E7C8252C26E700E513B0 /* DownloadModel.h */,
 				57A1E7C9252C26E700E513B0 /* DownloadModel.m */,
 				57A1E787252B2E0B00E513B0 /* ViewController.h */,
@@ -440,6 +453,7 @@
 				57A1E7C4252C1D2A00E513B0 /* MultiselectTableViewCell.m in Sources */,
 				57A1E7BE252B61A700E513B0 /* MultiselectTableViewController.m in Sources */,
 				57A1E7FE2535D7A700E513B0 /* ZZDownloadManager.m in Sources */,
+				573857CC253D510B00DAF914 /* DownloadRealmModel.m in Sources */,
 				57A1E794252B2E0D00E513B0 /* main.m in Sources */,
 				57A1E7CA252C26E700E513B0 /* DownloadModel.m in Sources */,
 			);
@@ -547,6 +561,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				HEADER_SEARCH_PATHS = "\"${PODS_CONFIGURATION_BUILD_DIR}/Realm.framework/Headers\"";
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
@@ -600,6 +615,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				HEADER_SEARCH_PATHS = "\"${PODS_CONFIGURATION_BUILD_DIR}/Realm.framework/Headers\"";
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
@@ -616,6 +632,15 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = J7DR2LJWWJ;
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/AFNetworking/AFNetworking.framework/Headers\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/FLAnimatedImage/FLAnimatedImage.framework/Headers\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/Masonry/Masonry.framework/Headers\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/SDWebImage/SDWebImage.framework/Headers\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/SDWebImageFLPlugin/SDWebImageFLPlugin.framework/Headers\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/Realm.framework/Headers\"",
+				);
 				INFOPLIST_FILE = MultiselectDownloadTable/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -635,6 +660,15 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = J7DR2LJWWJ;
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/AFNetworking/AFNetworking.framework/Headers\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/FLAnimatedImage/FLAnimatedImage.framework/Headers\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/Masonry/Masonry.framework/Headers\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/SDWebImage/SDWebImage.framework/Headers\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/SDWebImageFLPlugin/SDWebImageFLPlugin.framework/Headers\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/Realm.framework/Headers\"",
+				);
 				INFOPLIST_FILE = MultiselectDownloadTable/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",

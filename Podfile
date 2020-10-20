@@ -11,6 +11,7 @@ target 'MultiselectDownloadTable' do
   pod 'SDWebImageFLPlugin' # 对FLAnimatedImage和SDWebImage的桥接
   pod 'Masonry'
   pod 'AFNetworking', '~> 3.0'
+  pod 'Realm'
   target 'MultiselectDownloadTableTests' do
     inherit! :search_paths
     # Pods for testing
