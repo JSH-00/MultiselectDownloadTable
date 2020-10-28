@@ -1,0 +1,6 @@
+framework module Pods_MultiselectDownloadTable {
+  umbrella header "Pods-MultiselectDownloadTable-umbrella.h"
+
+  export *
+  module * { export * }
+}

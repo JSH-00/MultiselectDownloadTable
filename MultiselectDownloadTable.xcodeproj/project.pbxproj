@@ -3,10 +3,12 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2133EBC7E24B5BBA6CEDE941 /* Pods_MultiselectDownloadTableTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5767B81716E6EBA6D7B60EB6 /* Pods_MultiselectDownloadTableTests.framework */; };
+		5736CF7B2546961B000EDBD9 /* DownloadModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 5736CF7A2546961B000EDBD9 /* DownloadModel.m */; };
 		57A1E783252B2E0B00E513B0 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 57A1E782252B2E0B00E513B0 /* AppDelegate.m */; };
 		57A1E789252B2E0B00E513B0 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 57A1E788252B2E0B00E513B0 /* ViewController.m */; };
 		57A1E78C252B2E0B00E513B0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 57A1E78A252B2E0B00E513B0 /* Main.storyboard */; };
@@ -15,6 +17,14 @@
 		57A1E794252B2E0D00E513B0 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 57A1E793252B2E0D00E513B0 /* main.m */; };
 		57A1E79E252B2E0D00E513B0 /* MultiselectDownloadTableTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 57A1E79D252B2E0D00E513B0 /* MultiselectDownloadTableTests.m */; };
 		57A1E7A9252B2E0D00E513B0 /* MultiselectDownloadTableUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 57A1E7A8252B2E0D00E513B0 /* MultiselectDownloadTableUITests.m */; };
+		57A1E7BE252B61A700E513B0 /* MultiselectTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 57A1E7BD252B61A700E513B0 /* MultiselectTableViewController.m */; };
+		57A1E7C4252C1D2A00E513B0 /* MultiselectTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 57A1E7C3252C1D2A00E513B0 /* MultiselectTableViewCell.m */; };
+		57A1E7EF2530AE6000E513B0 /* ZZDownloadTask.m in Sources */ = {isa = PBXBuildFile; fileRef = 57A1E7EE2530AE6000E513B0 /* ZZDownloadTask.m */; };
+		57A1E7FE2535D7A700E513B0 /* ZZDownloadManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 57A1E7FD2535D7A700E513B0 /* ZZDownloadManager.m */; };
+		57E0911E2539861700E5637C /* libc++.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 57E0911D2539861700E5637C /* libc++.tbd */; };
+		57E091232539862100E5637C /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 57E091222539862100E5637C /* libz.tbd */; };
+		89175DBD806F076FACE1BEE2 /* Pods_MultiselectDownloadTable_MultiselectDownloadTableUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DD5CDEA99EF53206C4EC2B56 /* Pods_MultiselectDownloadTable_MultiselectDownloadTableUITests.framework */; };
+		A159928A186B79F609FBA825 /* Pods_MultiselectDownloadTable.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FE2DED566ED4DF271EDEF1DD /* Pods_MultiselectDownloadTable.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -35,6 +45,12 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0E2F97DF824AFBE83060D31A /* Pods-MultiselectDownloadTable-MultiselectDownloadTableUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MultiselectDownloadTable-MultiselectDownloadTableUITests.debug.xcconfig"; path = "Target Support Files/Pods-MultiselectDownloadTable-MultiselectDownloadTableUITests/Pods-MultiselectDownloadTable-MultiselectDownloadTableUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		191C3093799D2E7B578E044B /* Pods-MultiselectDownloadTableTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MultiselectDownloadTableTests.debug.xcconfig"; path = "Target Support Files/Pods-MultiselectDownloadTableTests/Pods-MultiselectDownloadTableTests.debug.xcconfig"; sourceTree = "<group>"; };
+		2A2418C66ADC352AE72D2515 /* Pods-MultiselectDownloadTable.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MultiselectDownloadTable.release.xcconfig"; path = "Target Support Files/Pods-MultiselectDownloadTable/Pods-MultiselectDownloadTable.release.xcconfig"; sourceTree = "<group>"; };
+		5736CF792546961B000EDBD9 /* DownloadModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DownloadModel.h; sourceTree = "<group>"; };
+		5736CF7A2546961B000EDBD9 /* DownloadModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DownloadModel.m; sourceTree = "<group>"; };
+		5767B81716E6EBA6D7B60EB6 /* Pods_MultiselectDownloadTableTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MultiselectDownloadTableTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		57A1E77E252B2E0B00E513B0 /* MultiselectDownloadTable.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MultiselectDownloadTable.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		57A1E781252B2E0B00E513B0 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		57A1E782252B2E0B00E513B0 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -51,6 +67,21 @@
 		57A1E7A4252B2E0D00E513B0 /* MultiselectDownloadTableUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MultiselectDownloadTableUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		57A1E7A8252B2E0D00E513B0 /* MultiselectDownloadTableUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MultiselectDownloadTableUITests.m; sourceTree = "<group>"; };
 		57A1E7AA252B2E0D00E513B0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		57A1E7BC252B61A700E513B0 /* MultiselectTableViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MultiselectTableViewController.h; sourceTree = "<group>"; };
+		57A1E7BD252B61A700E513B0 /* MultiselectTableViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MultiselectTableViewController.m; sourceTree = "<group>"; };
+		57A1E7C2252C1D2A00E513B0 /* MultiselectTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MultiselectTableViewCell.h; sourceTree = "<group>"; };
+		57A1E7C3252C1D2A00E513B0 /* MultiselectTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MultiselectTableViewCell.m; sourceTree = "<group>"; };
+		57A1E7ED2530AE6000E513B0 /* ZZDownloadTask.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZZDownloadTask.h; sourceTree = "<group>"; };
+		57A1E7EE2530AE6000E513B0 /* ZZDownloadTask.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZZDownloadTask.m; sourceTree = "<group>"; };
+		57A1E7FC2535D7A700E513B0 /* ZZDownloadManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZZDownloadManager.h; sourceTree = "<group>"; };
+		57A1E7FD2535D7A700E513B0 /* ZZDownloadManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZZDownloadManager.m; sourceTree = "<group>"; };
+		57E0911D2539861700E5637C /* libc++.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libc++.tbd"; path = "usr/lib/libc++.tbd"; sourceTree = SDKROOT; };
+		57E091222539862100E5637C /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
+		772FA14A5CD8030A0596BCA0 /* Pods-MultiselectDownloadTable.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MultiselectDownloadTable.debug.xcconfig"; path = "Target Support Files/Pods-MultiselectDownloadTable/Pods-MultiselectDownloadTable.debug.xcconfig"; sourceTree = "<group>"; };
+		DD5CDEA99EF53206C4EC2B56 /* Pods_MultiselectDownloadTable_MultiselectDownloadTableUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MultiselectDownloadTable_MultiselectDownloadTableUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		F0F81F00C7768EE2C0295995 /* Pods-MultiselectDownloadTableTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MultiselectDownloadTableTests.release.xcconfig"; path = "Target Support Files/Pods-MultiselectDownloadTableTests/Pods-MultiselectDownloadTableTests.release.xcconfig"; sourceTree = "<group>"; };
+		FE2DED566ED4DF271EDEF1DD /* Pods_MultiselectDownloadTable.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MultiselectDownloadTable.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		FE3D72CCDD1DDE54D604A800 /* Pods-MultiselectDownloadTable-MultiselectDownloadTableUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MultiselectDownloadTable-MultiselectDownloadTableUITests.release.xcconfig"; path = "Target Support Files/Pods-MultiselectDownloadTable-MultiselectDownloadTableUITests/Pods-MultiselectDownloadTable-MultiselectDownloadTableUITests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +89,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				57E091232539862100E5637C /* libz.tbd in Frameworks */,
+				57E0911E2539861700E5637C /* libc++.tbd in Frameworks */,
+				A159928A186B79F609FBA825 /* Pods_MultiselectDownloadTable.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -65,6 +99,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2133EBC7E24B5BBA6CEDE941 /* Pods_MultiselectDownloadTableTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -72,12 +107,25 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				89175DBD806F076FACE1BEE2 /* Pods_MultiselectDownloadTable_MultiselectDownloadTableUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2072B5AF926BF50E4B5F2BCC /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				57E091222539862100E5637C /* libz.tbd */,
+				57E0911D2539861700E5637C /* libc++.tbd */,
+				FE2DED566ED4DF271EDEF1DD /* Pods_MultiselectDownloadTable.framework */,
+				DD5CDEA99EF53206C4EC2B56 /* Pods_MultiselectDownloadTable_MultiselectDownloadTableUITests.framework */,
+				5767B81716E6EBA6D7B60EB6 /* Pods_MultiselectDownloadTableTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		57A1E775252B2E0B00E513B0 = {
 			isa = PBXGroup;
 			children = (
@@ -85,6 +133,8 @@
 				57A1E79C252B2E0D00E513B0 /* MultiselectDownloadTableTests */,
 				57A1E7A7252B2E0D00E513B0 /* MultiselectDownloadTableUITests */,
 				57A1E77F252B2E0B00E513B0 /* Products */,
+				68FFB0FF1AC0D2536327DF3A /* Pods */,
+				2072B5AF926BF50E4B5F2BCC /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -103,6 +153,16 @@
 			children = (
 				57A1E781252B2E0B00E513B0 /* AppDelegate.h */,
 				57A1E782252B2E0B00E513B0 /* AppDelegate.m */,
+				57A1E7BC252B61A700E513B0 /* MultiselectTableViewController.h */,
+				57A1E7BD252B61A700E513B0 /* MultiselectTableViewController.m */,
+				57A1E7C2252C1D2A00E513B0 /* MultiselectTableViewCell.h */,
+				57A1E7C3252C1D2A00E513B0 /* MultiselectTableViewCell.m */,
+				57A1E7ED2530AE6000E513B0 /* ZZDownloadTask.h */,
+				57A1E7EE2530AE6000E513B0 /* ZZDownloadTask.m */,
+				57A1E7FC2535D7A700E513B0 /* ZZDownloadManager.h */,
+				57A1E7FD2535D7A700E513B0 /* ZZDownloadManager.m */,
+				5736CF792546961B000EDBD9 /* DownloadModel.h */,
+				5736CF7A2546961B000EDBD9 /* DownloadModel.m */,
 				57A1E787252B2E0B00E513B0 /* ViewController.h */,
 				57A1E788252B2E0B00E513B0 /* ViewController.m */,
 				57A1E78A252B2E0B00E513B0 /* Main.storyboard */,
@@ -132,6 +192,19 @@
 			path = MultiselectDownloadTableUITests;
 			sourceTree = "<group>";
 		};
+		68FFB0FF1AC0D2536327DF3A /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				772FA14A5CD8030A0596BCA0 /* Pods-MultiselectDownloadTable.debug.xcconfig */,
+				2A2418C66ADC352AE72D2515 /* Pods-MultiselectDownloadTable.release.xcconfig */,
+				0E2F97DF824AFBE83060D31A /* Pods-MultiselectDownloadTable-MultiselectDownloadTableUITests.debug.xcconfig */,
+				FE3D72CCDD1DDE54D604A800 /* Pods-MultiselectDownloadTable-MultiselectDownloadTableUITests.release.xcconfig */,
+				191C3093799D2E7B578E044B /* Pods-MultiselectDownloadTableTests.debug.xcconfig */,
+				F0F81F00C7768EE2C0295995 /* Pods-MultiselectDownloadTableTests.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -139,9 +212,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 57A1E7AD252B2E0D00E513B0 /* Build configuration list for PBXNativeTarget "MultiselectDownloadTable" */;
 			buildPhases = (
+				E01BC00D173960FA98EDDB73 /* [CP] Check Pods Manifest.lock */,
 				57A1E77A252B2E0B00E513B0 /* Sources */,
 				57A1E77B252B2E0B00E513B0 /* Frameworks */,
 				57A1E77C252B2E0B00E513B0 /* Resources */,
+				48C8971650B87E3BDF3D34F7 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -156,6 +231,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 57A1E7B0252B2E0D00E513B0 /* Build configuration list for PBXNativeTarget "MultiselectDownloadTableTests" */;
 			buildPhases = (
+				4BC45B4A95F70AD48850B8FF /* [CP] Check Pods Manifest.lock */,
 				57A1E795252B2E0D00E513B0 /* Sources */,
 				57A1E796252B2E0D00E513B0 /* Frameworks */,
 				57A1E797252B2E0D00E513B0 /* Resources */,
@@ -174,9 +250,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 57A1E7B3252B2E0D00E513B0 /* Build configuration list for PBXNativeTarget "MultiselectDownloadTableUITests" */;
 			buildPhases = (
+				3CC07C27B1FE6291036957F9 /* [CP] Check Pods Manifest.lock */,
 				57A1E7A0252B2E0D00E513B0 /* Sources */,
 				57A1E7A1252B2E0D00E513B0 /* Frameworks */,
 				57A1E7A2252B2E0D00E513B0 /* Resources */,
+				F348647BCF5F02F298450A48 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -256,6 +334,109 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		3CC07C27B1FE6291036957F9 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-MultiselectDownloadTable-MultiselectDownloadTableUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		48C8971650B87E3BDF3D34F7 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-MultiselectDownloadTable/Pods-MultiselectDownloadTable-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-MultiselectDownloadTable/Pods-MultiselectDownloadTable-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-MultiselectDownloadTable/Pods-MultiselectDownloadTable-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		4BC45B4A95F70AD48850B8FF /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-MultiselectDownloadTableTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E01BC00D173960FA98EDDB73 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-MultiselectDownloadTable-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F348647BCF5F02F298450A48 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-MultiselectDownloadTable-MultiselectDownloadTableUITests/Pods-MultiselectDownloadTable-MultiselectDownloadTableUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-MultiselectDownloadTable-MultiselectDownloadTableUITests/Pods-MultiselectDownloadTable-MultiselectDownloadTableUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-MultiselectDownloadTable-MultiselectDownloadTableUITests/Pods-MultiselectDownloadTable-MultiselectDownloadTableUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		57A1E77A252B2E0B00E513B0 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -263,7 +444,12 @@
 			files = (
 				57A1E789252B2E0B00E513B0 /* ViewController.m in Sources */,
 				57A1E783252B2E0B00E513B0 /* AppDelegate.m in Sources */,
+				57A1E7EF2530AE6000E513B0 /* ZZDownloadTask.m in Sources */,
+				57A1E7C4252C1D2A00E513B0 /* MultiselectTableViewCell.m in Sources */,
+				57A1E7BE252B61A700E513B0 /* MultiselectTableViewController.m in Sources */,
+				57A1E7FE2535D7A700E513B0 /* ZZDownloadManager.m in Sources */,
 				57A1E794252B2E0D00E513B0 /* main.m in Sources */,
+				5736CF7B2546961B000EDBD9 /* DownloadModel.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -369,6 +555,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				HEADER_SEARCH_PATHS = "\"${PODS_CONFIGURATION_BUILD_DIR}/Realm.framework/Headers\"";
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
@@ -422,6 +609,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				HEADER_SEARCH_PATHS = "\"${PODS_CONFIGURATION_BUILD_DIR}/Realm.framework/Headers\"";
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
@@ -432,11 +620,21 @@
 		};
 		57A1E7AE252B2E0D00E513B0 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 772FA14A5CD8030A0596BCA0 /* Pods-MultiselectDownloadTable.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = J7DR2LJWWJ;
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/AFNetworking/AFNetworking.framework/Headers\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/FLAnimatedImage/FLAnimatedImage.framework/Headers\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/Masonry/Masonry.framework/Headers\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/SDWebImage/SDWebImage.framework/Headers\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/SDWebImageFLPlugin/SDWebImageFLPlugin.framework/Headers\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/Realm.framework/Headers\"",
+				);
 				INFOPLIST_FILE = MultiselectDownloadTable/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -450,11 +648,21 @@
 		};
 		57A1E7AF252B2E0D00E513B0 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2A2418C66ADC352AE72D2515 /* Pods-MultiselectDownloadTable.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = J7DR2LJWWJ;
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/AFNetworking/AFNetworking.framework/Headers\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/FLAnimatedImage/FLAnimatedImage.framework/Headers\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/Masonry/Masonry.framework/Headers\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/SDWebImage/SDWebImage.framework/Headers\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/SDWebImageFLPlugin/SDWebImageFLPlugin.framework/Headers\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/Realm.framework/Headers\"",
+				);
 				INFOPLIST_FILE = MultiselectDownloadTable/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -468,6 +676,7 @@
 		};
 		57A1E7B1252B2E0D00E513B0 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 191C3093799D2E7B578E044B /* Pods-MultiselectDownloadTableTests.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
@@ -488,6 +697,7 @@
 		};
 		57A1E7B2252B2E0D00E513B0 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = F0F81F00C7768EE2C0295995 /* Pods-MultiselectDownloadTableTests.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
@@ -508,6 +718,7 @@
 		};
 		57A1E7B4252B2E0D00E513B0 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0E2F97DF824AFBE83060D31A /* Pods-MultiselectDownloadTable-MultiselectDownloadTableUITests.debug.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = J7DR2LJWWJ;
@@ -526,6 +737,7 @@
 		};
 		57A1E7B5252B2E0D00E513B0 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = FE3D72CCDD1DDE54D604A800 /* Pods-MultiselectDownloadTable-MultiselectDownloadTableUITests.release.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = J7DR2LJWWJ;
