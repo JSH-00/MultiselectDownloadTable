@@ -5,23 +5,18 @@
 //  Created by JSH on 2020/10/6.
 //
 
-#import <Foundation/Foundation.h>
+#import <Realm/Realm.h>
 #import "ZZDownloadTask.h"
 
-NS_ASSUME_NONNULL_BEGIN
-
-@interface DownloadModel : NSObject
-@property (nonatomic, strong) NSString* studentID;
-@property (nonatomic, strong) NSString* studentName;
-@property (nonatomic, strong) NSString* studentAddress;
-@property (nonatomic, strong) NSString* imageURL;
+@interface DownloadModel : RLMObject
+@property (nonatomic, strong) NSString *uniqueID;
 @property (nonatomic, strong) NSString* id;
 @property (nonatomic, strong) NSString* type;
 @property (nonatomic, strong) NSString* thumbnail;
 @property (nonatomic, strong) NSString* download;
 @property (nonatomic, strong) NSString* create_time;
 @property (nonatomic, strong) NSString* author;
-@property (nonatomic, strong) NSString*  link;
+@property (nonatomic, strong) NSString* link;
 @property (nonatomic, strong) NSString* likes;
 @property (nonatomic, strong) NSString* shares;
 @property (nonatomic, strong) NSString* views;
@@ -33,7 +28,9 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, strong) NSString* sort;
 @property (nonatomic, strong) NSString* time_new;
 @property (nonatomic, strong) ZZDownloadTask *downloadTask;
+@property (nonatomic, assign) double progress;
+@property BOOL alreadyDownloaded;
 - (instancetype)initWithDictionary:(NSDictionary *)dict;
 @end
 
-NS_ASSUME_NONNULL_END
+RLM_ARRAY_TYPE(DownloadModel)

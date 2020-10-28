@@ -34,4 +34,10 @@
     self.time_new = [NSString stringWithFormat:@"%@",self.time_new];
     self.create_time = [NSString stringWithFormat:@"%@",self.create_time];
 }
++ (NSString *)primaryKey {
+    return @"uniqueID";
+}
++ (NSArray<NSString *> *)ignoredProperties {
+    return @[@"downloadTask",@"progress"];
+}
 @end

@@ -9,7 +9,6 @@
 #import "MultiselectTableViewCell.h"
 #import "ZZDownloadTask.h"
 #import "ZZDownloadManager.h"
-#import "DownloadRealmModel.h"
 @interface MultiselectTableViewController ()<UITableViewDataSource, UITableViewDelegate>
 @property (nonatomic, weak) UITableView * multiselectTable;
 @property (nonatomic, weak)UIView * topView;
@@ -237,10 +236,9 @@
             downloadModelInfo.downloadTask.urlString = downloadModelInfo.download;
             downloadModelInfo.downloadTask.progress = 0.0;
             downloadModelInfo.downloadTask.uniqueID = [NSString stringWithFormat:@"task%d",i];
+            downloadModelInfo.uniqueID = [NSString stringWithFormat:@"task%d",i];
             downloadModelInfo.downloadTask.alreadyDownloaded = NO;
-            DownloadRealmModel *downloadRealModelInfo = [DownloadRealmModel new];
-            [downloadRealModelInfo initWithDownloadMode:downloadModelInfo];
-            [realm addOrUpdateObject:downloadRealModelInfo];
+            [realm addOrUpdateObject:downloadModelInfo];
             [self.multiselectArray addObject:downloadModelInfo];
         }
         [realm commitWriteTransaction];

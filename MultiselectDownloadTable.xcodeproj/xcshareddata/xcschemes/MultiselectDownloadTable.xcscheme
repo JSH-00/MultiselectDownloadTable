@@ -71,7 +71,7 @@
          </BuildableReference>
       </BuildableProductRunnable>
       <LocationScenarioReference
-         identifier = "../../../../Downloads/simudreamtown.gpx"
+         identifier = "../simudreamtown.gpx 08-53-20-574.gpx"
          referenceType = "0">
       </LocationScenarioReference>
    </LaunchAction>

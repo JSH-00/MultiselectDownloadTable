@@ -15,7 +15,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, assign) double downloadProgress;
 @property (nonatomic, strong) NSURLSessionDownloadTask* downloadSessionTask;
 @property (nonatomic, strong) ZZDownloadTask * DownloadTask;
-@property (nonatomic, assign) NSInteger * maxDownloadNum;
+@property (nonatomic, assign) NSInteger  maxDownloadNum;
 @property (nonatomic, strong) AFURLSessionManager *manager;
 @property(nonatomic, strong) dispatch_queue_t queue;
 @property(nonatomic, strong) dispatch_semaphore_t semaphore;

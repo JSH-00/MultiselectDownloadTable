@@ -13,15 +13,21 @@
     /* 开始请求下载 */
     AFURLSessionManager *manager = [[AFURLSessionManager alloc] initWithSessionConfiguration:[NSURLSessionConfiguration defaultSessionConfiguration]];
     self.manager = manager;
-    self.maxDownloadNum = &(maxDownloadNum);
+    self.maxDownloadNum = maxDownloadNum;
     dispatch_queue_t que = dispatch_queue_create("com.vc.downloadQueue", DISPATCH_QUEUE_SERIAL);
-    dispatch_semaphore_t semaphore = dispatch_semaphore_create(*(self.maxDownloadNum));
+    dispatch_semaphore_t semaphore = dispatch_semaphore_create(self.maxDownloadNum);
     self.queue = que;
     self.semaphore = semaphore;
     [zzDownloadTaskArray enumerateObjectsUsingBlock:^(DownloadModel * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
         dispatch_async(que, ^{
+            // 在其他线程控制同步下载的数量，否则会导致主线程卡死，wait forever
+            NSLog(@"DownloadTT start index:%lu",(unsigned long)idx);
             dispatch_semaphore_wait(semaphore, DISPATCH_TIME_FOREVER);
-            [self downloadFromURL:[zzDownloadTaskArray objectAtIndex:idx].download andDownloadModel:[zzDownloadTaskArray objectAtIndex:idx]];
+            NSLog(@"DownloadTT end index:%lu",(unsigned long)idx);
+            dispatch_async(dispatch_get_main_queue(), ^{
+                // realm在主线程创建，所以用 model 内的数据需要切换到主线程
+                [self downloadFromURL:[zzDownloadTaskArray objectAtIndex:idx].download andDownloadModel:obj];
+            });
         });
     }];
 }
